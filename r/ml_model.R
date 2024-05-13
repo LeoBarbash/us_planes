@@ -24,7 +24,7 @@ logreg_classif <- function(){
   ml_data <- ml_data %>%
     mutate(DepDelay = as.integer(as.logical(DepDelay)))
   ml_data$DepDelay <- factor(ml_data$DepDelay)
-  n <- nrow(titanic)
+  n <- nrow(ml_data)
   train_set <- sample(n, round(0.5*n))
   test_set <- setdiff(1:n, train_set)
   task <- TaskClassif$new('ontime', backend=ml_data, target = 'DepDelay')
