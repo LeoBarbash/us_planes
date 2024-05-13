@@ -1,0 +1,34 @@
+---
+title: "r_script"
+author: "Lev Barbash"
+date: "2023-10-09"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=8, echo = TRUE)
+```
+
+
+```{r best_time}
+source("best_time.R")
+box_plots_best_time()
+```
+
+```{r older_planes}
+source("older_planes.R")
+box_plots_decade_planes()
+```
+```{r number_of_flights_change}
+source("number_of_flights_change.R")
+networks_popular_flights()
+```
+```{r cascade_delays}
+source("cascade_delays.R")
+print(tables_delayed_cascade_delays())
+```
+```{r ml_model}
+source("ml_model.R")
+model_score = logreg_classif()
+print(model_score[2])
+```
